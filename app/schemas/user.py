@@ -16,3 +16,11 @@ class UserResponse(UserBase):
 
     # Pydantic v2 configuration to read data directly from database objects
     model_config = ConfigDict(from_attributes=True)
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+    id: int | None = None
